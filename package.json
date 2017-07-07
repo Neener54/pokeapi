@@ -1,0 +1,24 @@
+{
+  "name": "pokeapi",
+  "version": "1.0.0",
+  "description": "Pokemon API and Caching layer",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node index.js"
+  },
+  "author": "Michael Archibald <micharch54@gmail.com>",
+  "license": "ISC",
+  "optionalDependencies": {
+    "eslint": "4.1.1",
+    "eslint-config-standard": "10.2.1",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-node": "5.1.0",
+    "eslint-plugin-promise": "3.5.0",
+    "eslint-plugin-standard": "3.0.1",
+    "handlebars": "4.0.10",
+    "hapi": "16.4.3",
+    "hoek": "4.1.1",
+    "vision": "4.1.1"
+  }
+}
