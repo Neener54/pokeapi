@@ -2,6 +2,13 @@ const https = require('https')
 
 module.exports = [{
   method: 'GET',
+  path: '/',
+  handler (request, reply) {
+    'use strict'
+    reply.view('index.jsx')
+  }
+}, {
+  method: 'GET',
   path: '/pokemon/{id}',
   handler (request, reply) {
     let options = {
@@ -18,7 +25,7 @@ module.exports = [{
       })
       res.on('end', () => {
         let parsed = JSON.parse(body)
-        reply.view('show', parsed)
+        reply.view('show.jsx', parsed)
       })
     })
 

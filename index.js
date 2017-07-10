@@ -1,15 +1,20 @@
 'use strict'
-const Path = require('path')
+require('babel-register')({
+  presets: ['es2015', 'react']
+})
 const Hoek = require('hoek')
 const {Server} = require('hapi')
 
 const server = new Server()
 
-server.register(require('vision'), (err) => {
+server.register([{
+  register: require('inert')},{
+  register: require('vision')}], (err) => {
   Hoek.assert(!err, err)
   server.views({
     engines: {
-      html: require('handlebars')
+      html: require('handlebars'),
+      jsx: require('hapi-react-views')
     },
     relativeTo: __dirname,
     path: 'templates'
